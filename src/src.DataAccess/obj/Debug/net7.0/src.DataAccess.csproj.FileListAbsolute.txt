@@ -1,0 +1,14 @@
+C:\Users\m.yunusov\Desktop\ImonWallet\src\src.DataAccess\bin\Debug\net7.0\src.DataAccess.deps.json
+C:\Users\m.yunusov\Desktop\ImonWallet\src\src.DataAccess\bin\Debug\net7.0\src.DataAccess.dll
+C:\Users\m.yunusov\Desktop\ImonWallet\src\src.DataAccess\bin\Debug\net7.0\src.DataAccess.pdb
+C:\Users\m.yunusov\Desktop\ImonWallet\src\src.DataAccess\obj\Debug\net7.0\src.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\m.yunusov\Desktop\ImonWallet\src\src.DataAccess\obj\Debug\net7.0\src.DataAccess.AssemblyInfoInputs.cache
+C:\Users\m.yunusov\Desktop\ImonWallet\src\src.DataAccess\obj\Debug\net7.0\src.DataAccess.AssemblyInfo.cs
+C:\Users\m.yunusov\Desktop\ImonWallet\src\src.DataAccess\obj\Debug\net7.0\src.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\m.yunusov\Desktop\ImonWallet\src\src.DataAccess\obj\Debug\net7.0\src.DataAccess.dll
+C:\Users\m.yunusov\Desktop\ImonWallet\src\src.DataAccess\obj\Debug\net7.0\refint\src.DataAccess.dll
+C:\Users\m.yunusov\Desktop\ImonWallet\src\src.DataAccess\obj\Debug\net7.0\src.DataAccess.pdb
+C:\Users\m.yunusov\Desktop\ImonWallet\src\src.DataAccess\obj\Debug\net7.0\ref\src.DataAccess.dll
+C:\Users\m.yunusov\Desktop\ImonWallet\src\src.DataAccess\bin\Debug\net7.0\src.DataAccess.runtimeconfig.json
+C:\Users\m.yunusov\Desktop\ImonWallet\src\src.DataAccess\obj\Debug\net7.0\src.DataAccess.csproj.AssemblyReference.cache
+C:\Users\m.yunusov\Desktop\ImonWallet\src\src.DataAccess\obj\Debug\net7.0\src.DataAccess.genruntimeconfig.cache

@@ -1,0 +1,15 @@
+C:\Users\m.yunusov\Desktop\ImonWallet\src\src.BusinessLogic\bin\Debug\net7.0\src.BusinessLogic.deps.json
+C:\Users\m.yunusov\Desktop\ImonWallet\src\src.BusinessLogic\bin\Debug\net7.0\src.BusinessLogic.dll
+C:\Users\m.yunusov\Desktop\ImonWallet\src\src.BusinessLogic\bin\Debug\net7.0\src.BusinessLogic.pdb
+C:\Users\m.yunusov\Desktop\ImonWallet\src\src.BusinessLogic\bin\Debug\net7.0\src.DataAccess.dll
+C:\Users\m.yunusov\Desktop\ImonWallet\src\src.BusinessLogic\bin\Debug\net7.0\src.DataAccess.pdb
+C:\Users\m.yunusov\Desktop\ImonWallet\src\src.BusinessLogic\obj\Debug\net7.0\src.BusinessLogic.csproj.AssemblyReference.cache
+C:\Users\m.yunusov\Desktop\ImonWallet\src\src.BusinessLogic\obj\Debug\net7.0\src.BusinessLogic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\m.yunusov\Desktop\ImonWallet\src\src.BusinessLogic\obj\Debug\net7.0\src.BusinessLogic.AssemblyInfoInputs.cache
+C:\Users\m.yunusov\Desktop\ImonWallet\src\src.BusinessLogic\obj\Debug\net7.0\src.BusinessLogic.AssemblyInfo.cs
+C:\Users\m.yunusov\Desktop\ImonWallet\src\src.BusinessLogic\obj\Debug\net7.0\src.BusinessLogic.csproj.CoreCompileInputs.cache
+C:\Users\m.yunusov\Desktop\ImonWallet\src\src.BusinessLogic\obj\Debug\net7.0\src.BusinessLogic.csproj.CopyComplete
+C:\Users\m.yunusov\Desktop\ImonWallet\src\src.BusinessLogic\obj\Debug\net7.0\src.BusinessLogic.dll
+C:\Users\m.yunusov\Desktop\ImonWallet\src\src.BusinessLogic\obj\Debug\net7.0\refint\src.BusinessLogic.dll
+C:\Users\m.yunusov\Desktop\ImonWallet\src\src.BusinessLogic\obj\Debug\net7.0\src.BusinessLogic.pdb
+C:\Users\m.yunusov\Desktop\ImonWallet\src\src.BusinessLogic\obj\Debug\net7.0\ref\src.BusinessLogic.dll
