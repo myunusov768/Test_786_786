@@ -24,24 +24,6 @@ public sealed class Infrastructure : IInfrastructure
         _appSettings = appSettings;
         this.jsonSerializerOptions = jsonSerializerOptions;
     }
-
-    public async Task<ResultChack> CheckAccount(Check check, CancellationToken token = default)
-    {
-        ArgumentNullException.ThrowIfNull(check);
-        _logger.Debug($"Request to {_appSettings.Url} to Action {_appSettings.Actions}: {JsonSerializer.Deserialize<Check>(check.ToString(),jsonSerializerOptions)}");
-        var result = await _httpClient.PostAsJsonAsync(_appSettings.Url, check,jsonSerializerOptions, token);
-        if(result.IsSuccessStatusCode)
-        {
-            var f = await result.Content.ReadFromJsonAsync<ResultChack>(jsonSerializerOptions,token);
-            _logger.Debug($"Result to {_appSettings.Url} in Action {_appSettings.Actions}: {result.Content}");
-            if(f is not null)
-                return f;
-        }
-        _logger.Debug($"Eror result to {_appSettings.Url} in Action {_appSettings.Actions}: {result.Content}");
-
-        return new ResultChack();
-    }
-
     public async Task<ResultCheckStatus> CheckStatus(CheckStatus checkStatus, CancellationToken token = default)
     {
         ArgumentNullException.ThrowIfNull(checkStatus);

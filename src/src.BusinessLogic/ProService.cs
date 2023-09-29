@@ -10,19 +10,15 @@ public sealed class ProService : IProService
     {
         _infrastructure = infrastructure;
     }
-
-    public Task<ResultChack> CheckAccount(Check chack, CancellationToken token = default)
+    public async Task<ResultCheckStatus> CheckStatus(CheckStatus chackStatus, CancellationToken token = default)
     {
-        return _infrastructure.CheckAccount(chack,token);
+        ArgumentNullException.ThrowIfNull(chackStatus);
+        return await _infrastructure.CheckStatus(chackStatus,token);
     }
 
-    public Task<ResultCheckStatus> CheckStatus(CheckStatus chackStatus, CancellationToken token = default)
+    public async Task<ResultPay> Pay(Pay pay, CancellationToken token = default)
     {
-        throw new NotImplementedException();
-    }
-
-    public Task<ResultPay> Pay(Pay pay, CancellationToken token = default)
-    {
-        throw new NotImplementedException();
+        ArgumentNullException.ThrowIfNull(pay);
+        return await _infrastructure.Pay(pay,token);
     }
 }
