@@ -5,5 +5,5 @@ namespace src.DataAccess;
 
 public interface ICheckInfrastructure
 {
-    public Task<ResultChack> CheckAccount(Check chack, CancellationToken token = default);
+    public Task<string> CheckAccountAsync(Check chack, CancellationToken token = default);
 }

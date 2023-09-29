@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-using NLog;
 using src.BusinessLigic;
 using src.DataAccess;
 
@@ -9,17 +8,30 @@ namespace src.Presentation;
 [Route("imon/check")]
 public sealed class CheckController : ControllerBase
 {
-    private static readonly Logger logger = LogManager.GetCurrentClassLogger();
+    
     private readonly ISheckService _service;
+    private readonly ILogger _logger;
 
-    public CheckController(ISheckService service)
+    public CheckController(ISheckService service, ILogger logger)
     {
+        ArgumentNullException.ThrowIfNull(service);
+        ArgumentNullException.ThrowIfNull(logger);
         _service = service;
+        _logger = logger;
     }
     [HttpPost]
-    public async Task<CheckResponse> CheckResponseAsync([FromBody]CheckDto check, CancellationToken token = default)
+    public async Task<IActionResult> CheckResponseAsync([FromBody]CheckDto check, CancellationToken token = default)
     {
-        return  await _service.CheckAccount(check,token);
+        var result = await _service.CheckAccountAsync(check,token);
+        try
+        {
+            return Ok(result);
+        }
+        catch(Exception ex)
+        {
+            _logger.LogDebug(ex.Message);
+            return BadRequest(check);
+        }
     }
     
 }

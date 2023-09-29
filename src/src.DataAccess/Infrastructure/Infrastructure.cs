@@ -5,56 +5,50 @@ using System.Net.Http.Json;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using Microsoft.Extensions.Logging;
-using NLog;
 
 namespace src.DataAccess;
 
 public sealed class Infrastructure : IInfrastructure
 {
-    private static readonly Logger _logger = LogManager.GetCurrentClassLogger();
     private readonly HttpClient _httpClient;
     private readonly AppSettings _appSettings;
-    private readonly JsonSerializerOptions jsonSerializerOptions;
+    private readonly ILogger _logger;
 
-    public Infrastructure(HttpClient httpClient, AppSettings appSettings, JsonSerializerOptions jsonSerializerOptions)
+    public Infrastructure(HttpClient httpClient, AppSettings appSettings, ILogger logger)
     {
         ArgumentNullException.ThrowIfNull(httpClient);
         ArgumentNullException.ThrowIfNull(appSettings);
         _httpClient = httpClient;
         _appSettings = appSettings;
-        this.jsonSerializerOptions = jsonSerializerOptions;
+        _logger = logger;
     }
-    public async Task<ResultCheckStatus> CheckStatus(CheckStatus checkStatus, CancellationToken token = default)
+    public async Task<string> CheckStatusAsync(CheckStatus checkStatus, CancellationToken token = default)
     {
         ArgumentNullException.ThrowIfNull(checkStatus);
-        _logger.Debug($"Request to {_appSettings.Url} to Action {_appSettings.Actions}: {JsonSerializer.Deserialize<ResultCheckStatus>(checkStatus.ToString(),jsonSerializerOptions)}");
-        var result = await _httpClient.PostAsJsonAsync(_appSettings.Url,checkStatus,jsonSerializerOptions,token);
-        if(result.IsSuccessStatusCode)
+        var content = JsonContent.Create(JsonSerializer.Serialize(checkStatus, new JsonSerializerOptions(){ PropertyNameCaseInsensitive = true }));
+        _logger.LogDebug($"CheckStatus action request : {JsonSerializer.Serialize(checkStatus, new JsonSerializerOptions(){ PropertyNameCaseInsensitive = true })}");
+        var httpResponseMessage = await _httpClient.PostAsync(_appSettings.Url, content, token);
+        _logger.LogDebug($"CheckStatus action result : {JsonSerializer.Serialize(httpResponseMessage.Content, new JsonSerializerOptions(){ PropertyNameCaseInsensitive = true })}");
+        if(httpResponseMessage.IsSuccessStatusCode)
         {
-            var f = await result.Content.ReadFromJsonAsync<ResultCheckStatus>(jsonSerializerOptions,token);
-            _logger.Debug($"Result to {_appSettings.Url} in Action {_appSettings.Actions}: {result.Content}");
-            if(f is not null)
-                return f;
+            return await httpResponseMessage.Content.ReadAsStringAsync();
         }
-        _logger.Debug($"Eror result to {_appSettings.Url} in Action {_appSettings.Actions}: {result.Content}");
-
-        return new ResultCheckStatus();
+        return string.Empty;
+        
     }
 
-    public async Task<ResultPay> Pay(Pay pay, CancellationToken token = default)
+    public async Task<string> PayAsync(Pay pay, CancellationToken token = default)
     {
         ArgumentNullException.ThrowIfNull(pay);
-        _logger.Debug($"Request to {_appSettings.Url} to Action {_appSettings.Actions}: {JsonSerializer.Deserialize<ResultPay>(pay.ToString(),jsonSerializerOptions)}");
-        var result = await _httpClient.PostAsJsonAsync(_appSettings.Url, pay, jsonSerializerOptions, token);
-        if(result.IsSuccessStatusCode)
+        var content = JsonContent.Create(JsonSerializer.Serialize(pay, new JsonSerializerOptions(){ PropertyNameCaseInsensitive = true }));
+        _logger.LogDebug($"Pay action request : {JsonSerializer.Serialize(pay, new JsonSerializerOptions(){ PropertyNameCaseInsensitive = true })}");
+        var httpResponseMessage = await _httpClient.PostAsync(_appSettings.Url, content, token);
+        _logger.LogDebug($"Pay action result : {JsonSerializer.Serialize(httpResponseMessage.Content, new JsonSerializerOptions(){ PropertyNameCaseInsensitive = true })}");
+        if(httpResponseMessage.IsSuccessStatusCode)
         {
-            var f = await result.Content.ReadFromJsonAsync<ResultPay>( jsonSerializerOptions, token );
-            _logger.Debug($"Result to {_appSettings.Url} in Action {_appSettings.Actions}: {result.Content}");
-            if(f is not null)
-                return f;
+            return await httpResponseMessage.Content.ReadAsStringAsync();
         }
-        _logger.Debug($"Eror result to {_appSettings.Url} in Action {_appSettings.Actions}: {result.Content}");
-
-        return new ResultPay();
+        return string.Empty;
+        
     }
 }

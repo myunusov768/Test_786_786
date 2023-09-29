@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "XIqEV/rKUdp6ImbpjdzYX2+BNw2Ms/9yHVjRnBIZ+hD1rUEUepD+8ORv21D3KZWOlGSRG14K6MOiWAub2Mpk9g==",
+  "dgSpecHash": "XU3QhmbRuL0ga+gyqY7SBdQ89h4KG6EZ5RR1nAzhe3bzb2UN/mfSMV0eb82ppNFuxE2MEqDrjiLFQG262IVp1Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\m.yunusov\\Desktop\\ImonWallet\\src\\src.Presentation\\src.Presentation.csproj",
   "expectedPackageFiles": [
@@ -22,6 +22,7 @@
     "C:\\Users\\m.yunusov\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\7.0.0\\microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\m.yunusov\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\7.0.0\\microsoft.extensions.dependencyinjection.7.0.0.nupkg.sha512",
     "C:\\Users\\m.yunusov\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",
+    "C:\\Users\\m.yunusov\\.nuget\\packages\\microsoft.extensions.http\\7.0.0\\microsoft.extensions.http.7.0.0.nupkg.sha512",
     "C:\\Users\\m.yunusov\\.nuget\\packages\\microsoft.extensions.logging\\7.0.0\\microsoft.extensions.logging.7.0.0.nupkg.sha512",
     "C:\\Users\\m.yunusov\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\7.0.0\\microsoft.extensions.logging.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\m.yunusov\\.nuget\\packages\\microsoft.extensions.options\\7.0.0\\microsoft.extensions.options.7.0.0.nupkg.sha512",
