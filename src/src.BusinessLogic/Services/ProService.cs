@@ -8,11 +8,13 @@ public sealed class ProService : IProService
 {
     private readonly IInfrastructure _infrastructure;
     private readonly ILogger _logger;
+    private readonly HashingMd5 _hashing;
 
-    public ProService(IInfrastructure infrastructure, ILogger logger)
+    public ProService(IInfrastructure infrastructure, ILogger logger, HashingMd5 hashing)
     {
         _infrastructure = infrastructure;
         _logger = logger;
+        _hashing = hashing;
     }
     public async Task<ResultCheckStatus> CheckStatus(CheckStatus chackStatus, CancellationToken token = default)
     {
