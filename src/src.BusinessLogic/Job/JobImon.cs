@@ -36,12 +36,13 @@ public sealed class JobImon : BackgroundService
                 //long providerID, int providerErrorCode, Status status, CancellationToken token = default
                 var re = await _repository.GetPaymentsForCheckAsync(int.Parse(_appSettings.Services["1841"]), 2, Status.Pending, token);
                 await CheckStatusAsync(re,token);
+                
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex.Message);
             }
-
+            await Task.Delay(TimeSpan.FromSeconds(10), token);
         }
     }
     private async Task<IList<Pay>> PaysAsync(CancellationToken token = default)
